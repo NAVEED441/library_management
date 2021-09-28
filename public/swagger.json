@@ -1,0 +1,760 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"SaveUpdateResBook": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Title": {
+						"type": "string"
+					},
+					"Quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"Author": {
+						"type": "string"
+					},
+					"Category": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Title",
+					"Quantity",
+					"Author",
+					"Category"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveReqBook": {
+				"properties": {
+					"Title": {
+						"type": "string"
+					},
+					"Quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"Author": {
+						"type": "string"
+					},
+					"Category": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Title",
+					"Quantity",
+					"Author",
+					"Category"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateReqBook": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Title": {
+						"type": "string"
+					},
+					"Quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"Author": {
+						"type": "string"
+					},
+					"Category": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Title",
+					"Quantity",
+					"Author",
+					"Category"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetReqBook": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetByBookName": {
+				"properties": {
+					"Title": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Title"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveUpdateResAdmin": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Name": {
+						"type": "string"
+					},
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Name",
+					"Email",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveReqAdmin": {
+				"properties": {
+					"Name": {
+						"type": "string"
+					},
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Name",
+					"Email",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateReqAdmin": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Name": {
+						"type": "string"
+					},
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Name",
+					"Email",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LoginAdmin": {
+				"properties": {
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Email",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"BookIssueData": {
+				"properties": {
+					"BookId": {
+						"type": "string"
+					},
+					"IssueDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"returnDate": {
+						"type": "string"
+					},
+					"Bill": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"BookId",
+					"IssueDate",
+					"returnDate",
+					"Bill"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveUpdateResMember": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Name": {
+						"type": "string"
+					},
+					"Cell": {
+						"type": "string"
+					},
+					"Adress": {
+						"type": "string"
+					},
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					},
+					"IssueBooks": {
+						"items": {
+							"$ref": "#/components/schemas/BookIssueData"
+						},
+						"type": "array"
+					},
+					"TotalBill": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Name",
+					"Cell",
+					"Adress",
+					"Email",
+					"Password",
+					"IssueBooks",
+					"TotalBill"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveReqMember": {
+				"properties": {
+					"Name": {
+						"type": "string"
+					},
+					"Cell": {
+						"type": "string"
+					},
+					"Adress": {
+						"type": "string"
+					},
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					},
+					"IssueBooks": {
+						"items": {
+							"$ref": "#/components/schemas/BookIssueData"
+						},
+						"type": "array"
+					},
+					"TotalBill": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"Name",
+					"Cell",
+					"Adress",
+					"Email",
+					"Password",
+					"IssueBooks",
+					"TotalBill"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetMember": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"OldMember": {
+				"properties": {
+					"Email": {
+						"type": "string"
+					},
+					"IssueBooks": {
+						"items": {
+							"$ref": "#/components/schemas/BookIssueData"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"Email",
+					"IssueBooks"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"MemberReturnBook": {
+				"properties": {
+					"Email": {
+						"type": "string"
+					},
+					"BookId": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Email",
+					"BookId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"api_key": {
+				"type": "apiKey",
+				"name": "token",
+				"in": "header"
+			}
+		}
+	},
+	"info": {
+		"title": "library_sytem",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/book/savebook": {
+			"post": {
+				"operationId": "SaveBook",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResBook"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"book"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SaveReqBook"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/book/updatebook": {
+			"put": {
+				"operationId": "UpdateBook",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResBook"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"book"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateReqBook"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/book/getbookbyId": {
+			"post": {
+				"operationId": "GetBookById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResBook"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"book"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/GetReqBook"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/book/getbookByname": {
+			"post": {
+				"operationId": "GetBookByName",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResBook"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"book"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/GetByBookName"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/saveadmin": {
+			"post": {
+				"operationId": "SaveAdmin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResAdmin"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SaveReqAdmin"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/updateadmin": {
+			"put": {
+				"operationId": "UpdateAdmin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResAdmin"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateReqAdmin"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/loginadmin": {
+			"post": {
+				"operationId": "LoginAdmin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResAdmin"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LoginAdmin"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/member/saveMember": {
+			"post": {
+				"operationId": "SaveMember",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResMember"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"member"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SaveReqMember"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/member/getmember": {
+			"post": {
+				"operationId": "GetMember",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResMember"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"member"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/GetMember"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/member/IssuetooldMember": {
+			"post": {
+				"operationId": "SaveOldMember",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResMember"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"member"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/OldMember"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/member/returnBook": {
+			"post": {
+				"operationId": "ReturnBook",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResMember"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"member"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/MemberReturnBook"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
